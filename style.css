@@ -530,4 +530,119 @@ footer .logo { color: var(--white); margin-bottom: 1rem; }
     to { transform: translateY(0); opacity: 1; }
 }
 
-/* Existing Styles ... */
+/* Consulting Section Styles */
+.consulting-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.consulting-card {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: var(--radius-md);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e5e7eb;
+}
+
+.consulting-card.issue { border-left: 4px solid var(--accent); }
+.consulting-card.cause { border-left: 4px solid var(--primary); }
+.consulting-card.impact { border-left: 4px solid var(--secondary); grid-column: span 2; background: #ecfdf5; }
+
+.card-title {
+    font-weight: 700;
+    margin-bottom: 0.8rem;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.impact-text {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #065f46;
+}
+
+/* Action Plan Styles */
+.action-plan-container {
+    grid-column: span 2;
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: var(--radius-md);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.action-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #f3f4f6;
+}
+
+.action-step:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.step-badge {
+    display: inline-block;
+    padding: 0.3rem 0.8rem;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    min-width: 80px;
+    text-align: center;
+}
+
+.action-step.immediate .step-badge { background: #fee2e2; color: #991b1b; }
+.action-step.midterm .step-badge { background: #e0e7ff; color: #3730a3; }
+.action-step.upsell .step-badge { background: #d1fae5; color: #065f46; }
+
+/* Benchmark Chart */
+.benchmark-chart {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.benchmark-bar {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.benchmark-bar .label {
+    width: 80px;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.benchmark-bar .bar-fill {
+    height: 12px;
+    border-radius: 6px;
+    background: #e5e7eb;
+    position: relative;
+    min-width: 10px;
+}
+
+.benchmark-bar .bar-fill.my { background: var(--primary); }
+.benchmark-bar .bar-fill.competitor { background: var(--text-muted); opacity: 0.3; }
+
+.benchmark-bar .score {
+    width: 30px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    text-align: right;
+}
+
+@media (max-width: 768px) {
+    .consulting-section { grid-template-columns: 1fr; }
+    .consulting-card.impact { grid-column: span 1; }
+    .action-plan-container { grid-column: span 1; }
+}
