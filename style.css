@@ -245,48 +245,104 @@ nav {
 
 .problem-card:hover { transform: translateY(-10px); }
 
-/* Demo Section */
-.demo-section { padding: 100px 0; }
-.demo-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-    margin-top: 3rem;
+/* Analyzer Section */
+.analyzer-section { padding: 100px 0; }
+.analyzer-container {
+    background: var(--white);
+    padding: 3rem;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow);
+    max-width: 900px;
+    margin: 3rem auto 0;
 }
 
-.input-area textarea {
-    width: 100%;
-    height: 200px;
-    padding: 1.5rem;
+.search-box {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.search-box input {
+    flex: 1;
+    padding: 1rem 1.5rem;
     border-radius: var(--radius-md);
     border: 1px solid #e5e7eb;
-    font-family: inherit;
     font-size: 1rem;
-    resize: none;
-    margin-bottom: 1rem;
+    transition: all 0.3s;
 }
 
-.input-area textarea:focus {
+.search-box input:focus {
     outline: none;
     border-color: var(--primary);
     box-shadow: 0 0 0 3px var(--primary-glow);
 }
 
-.output-area {
-    min-height: 200px;
+.status-indicator {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 2rem;
 }
 
-.result-card {
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid rgba(79, 70, 229, 0.1);
+    border-top-color: var(--primary);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.hidden { display: none !important; }
+
+/* Insight Report Styling */
+.insight-report {
+    border-top: 1px solid #eee;
+    padding-top: 2rem;
     animation: fadeIn 0.5s ease-out;
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
+.report-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-top: 2rem;
 }
+
+.insight-card {
+    padding: 1.5rem;
+    border-radius: var(--radius-md);
+    background: #f8fafc;
+}
+
+.insight-card.pros { border-left: 4px solid var(--secondary); }
+.insight-card.cons { border-left: 4px solid var(--accent); }
+.insight-card.menu { border-left: 4px solid var(--primary); grid-column: span 2; }
+
+.tag-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.tag {
+    padding: 0.3rem 0.8rem;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.tag-primary { background: #eef2ff; color: var(--primary); }
+.tag-secondary { background: #ecfdf5; color: var(--secondary); }
+.tag-accent { background: #fffbeb; color: var(--accent); }
+
+/* Demo Section (Keep or adjust if needed) */
 
 /* Footer */
 footer {
@@ -297,10 +353,54 @@ footer {
 
 footer .logo { color: var(--white); margin-bottom: 1rem; }
 
-/* Responsive */
-@media (max-width: 968px) {
-    .hero { flex-direction: column; text-align: center; }
-    .hero-btns { justify-content: center; }
-    .problem-grid, .demo-container { grid-template-columns: 1fr; }
-    h1 { font-size: 2.5rem; }
+/* Urgent Alert Popup */
+.urgent-alert-popup {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 1000;
+    animation: slideUp 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
+
+.alert-content {
+    background: #111827;
+    color: white;
+    padding: 1.5rem;
+    border-radius: var(--radius-lg);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+    max-width: 350px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.alert-header {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 0.8rem;
+}
+
+.alert-icon { font-size: 1.5rem; }
+
+.alert-content p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 1.2rem;
+    color: #d1d5db;
+}
+
+.btn-primary-small {
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+@keyframes slideUp {
+    from { transform: translateY(100px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* Existing Styles ... */

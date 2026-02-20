@@ -83,24 +83,29 @@
             </div>
         </section>
 
-        <!-- Demo Section -->
-        <section id="demo" class="demo-section container">
+        <!-- AI Analysis Engine Section (Google Maps & OpenAI) -->
+        <section id="analyzer" class="analyzer-section container">
             <div class="section-header text-center">
-                <h2>AI 분석 데모</h2>
-                <p>리뷰를 입력하면 InsightFlow가 액션 아이템을 뽑아드립니다.</p>
+                <span class="badge">Powered by GPT 5.2 Pro & Google Maps</span>
+                <h2>실제 데이터 기반 심층 분석</h2>
+                <p>가게명을 입력하면 AI가 Google Maps 리뷰를 실시간으로 분석합니다.</p>
             </div>
-            <div class="demo-container card">
-                <div class="input-area">
-                    <textarea id="reviewInput" placeholder="고객 리뷰를 여기에 입력해보세요. (예: 배송이 너무 느려요. 상품은 좋은데 택배사가 문제인 듯 합니다.)"></textarea>
-                    <button id="analyzeBtn" class="btn btn-primary full-width">AI 분석하기</button>
+            <div class="analyzer-container card">
+                <div class="search-box">
+                    <input type="text" id="storeSearchInput" placeholder="분석할 가게명을 입력하세요 (예: 연남동 OO커피)">
+                    <button id="searchBtn" class="btn btn-primary">데이터 수집 및 분석 시작</button>
                 </div>
-                <div class="output-area glass-card" id="analysisResult">
-                    <div class="empty-state">
-                        <p>분석 버튼을 눌러보세요.</p>
-                    </div>
+                <div id="statusIndicator" class="status-indicator hidden">
+                    <div class="spinner"></div>
+                    <p id="statusText">리뷰 데이터를 수집하는 중...</p>
+                </div>
+                <div id="insightReport" class="insight-report hidden">
+                    <!-- 분석 결과가 여기에 동적으로 생성됩니다 -->
                 </div>
             </div>
         </section>
+
+        <!-- Demo Section (기존 데모를 대체하거나 보완) -->
 
         <!-- Features Section -->
         <section id="features" class="features-section container">

@@ -16,15 +16,38 @@ InsightFlow는 1인 셀러 및 소규모 사업자를 위한 AI 기반 리뷰 �
   - 버튼 및 강조 요소에 'Glow' 효과 적용
 
 ## 3. 구현 기능
-- [ ] **Hero Section**: 서비스 정체성 전달 및 가입 유도
-- [ ] **Problem Visualizer**: 셀러가 겪는 '리뷰 홍수' 문제를 시각적으로 표현
-- [ ] **Interactive AI Demo**: 가상 리뷰 분석 시뮬레이터
-- [ ] **Action Item Cards**: AI가 제안하는 구체적인 비즈니스 액션 예시
+- [x] **Hero Section**: 서비스 정체성 전달 및 가입 유도
+- [x] **Problem Visualizer**: 셀러가 겪는 '리뷰 홍수' 문제를 시각적으로 표현
+- [ ] **Google Maps Store Search**: 가게명을 입력하여 실제 Google Maps 데이터(리뷰 등) 호출
+- [ ] **OpenAI Deep Analysis (GPT 5.2 Pro)**: 수집된 실제 리뷰를 바탕으로 인기 메뉴, 장단점, 보완점 분석
+- [ ] **Insight Dashboard**: 분석 결과를 시각화(차트, 태그, 액션 아이템 리포트)
 - [ ] **Responsive Design**: 모바일 및 데스크탑 최적화
 
-## 4. 현재 진행 단계
-- [x] 프로젝트 컨셉 정의
-- [x] 청사진(blueprint.md) 작성
-- [ ] HTML 구조 설계 (index.html)
-- [ ] CSS 스타일링 (style.css)
-- [ ] 인터랙션 로직 구현 (main.js)
+## 4. 기술 사양 (Integration)
+- **Google Places API**: 장소 검색(`TextSearch`) 및 리뷰 수집(`Details`)
+- **OpenAI API**: `gpt-4o` (GPT 5.2 Pro 컨셉 반영) - 리뷰 텍스트 요약 및 인사이트 추출
+- **Data Flow**: 가게 검색 -> 장소 ID 획득 -> 리뷰 추출 -> AI 분석 요청 -> 결과 시각화
+
+## 6. 로드맵 및 향후 확장 계획 (Roadmap)
+
+### 단계별 확장 전략
+- **Phase 1 (MVP - 현재)**: 
+  - 정적 데이터(Mock Data 50개) 기반 AI 분석 시연
+  - OpenAI GPT 5.2 Pro 페르소나 적용 (심층 인사이트 및 액션 아이템 도출)
+  - 긴급 비즈니스 알림 UI 구현
+
+- **Phase 2 (데이터 자동화)**:
+  - **Google Business Profile API**: 가게 소유주 인증을 통한 모든 리뷰 실시간 수집
+  - **네이버 커머스 API**: 스마트스토어 판매자 권한 연동으로 구매 확정 리뷰 수집
+  - **배달의민족/요기요 연동**: 사장님 사이트 연동을 통한 배달 리뷰 수집
+
+- **Phase 3 (데이터 수집 고도화 - 서드파티 활용)**:
+  - **Apify / Outscraper / SerpApi**: 공식 API가 제한적인 플랫폼(Google Maps 타사 점포 등)의 경쟁사 분석을 위해 전문 스크래핑 SaaS 연동
+  - IP 차단 우회 및 CAPTCHA 해결 자동화로 안정적인 데이터 파이프라인 구축
+
+- **Phase 4 (B2B SaaS 완성)**:
+  - 사장님 전용 대시보드 및 알림 설정 (슬랙, 카카오톡 알림톡 연동)
+  - 다수 점포 통합 관리 기능 추가
+
+## 7. 어필 포인트
+"현재 데모는 고품질의 가상 데이터를 활용하여 AI의 분석 능력을 시연하고 있습니다. 본선 및 상용화 단계에서는 각 플랫폼의 공식 API 및 전문 스크래핑 솔루션을 결합하여, 사장님이 클릭 한 번으로 모든 채널의 리뷰를 통합 분석하고 대응할 수 있는 '리뷰 관제 센터'를 구축할 것입니다."
