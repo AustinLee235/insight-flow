@@ -306,7 +306,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         <div class="chart-container">
                             ${data.monthlyTrends.map((val, i) => `
                                 <div class="chart-bar-wrapper">
-                                    <div class="chart-bar ${i === 5 ? 'active' : ''}" style="height: ${val}%"></div>
+                                    <div class="chart-bar ${i === 5 ? 'active' : ''}" data-height="${val}"></div>
                                     <span class="chart-label">${i+1}월</span>
                                 </div>
                             `).join('')}
@@ -356,6 +356,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
             </div>
         `;
+
+        // 그래프 애니메이션 실행
+        setTimeout(() => {
+            const bars = insightReport.querySelectorAll('.chart-bar');
+            bars.forEach(bar => {
+                const height = bar.getAttribute('data-height');
+                bar.style.height = `${height}%`;
+            });
+        }, 100);
+
         insightReport.scrollIntoView({ behavior: 'smooth' });
     }
 
