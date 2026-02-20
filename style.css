@@ -245,7 +245,67 @@ nav {
 
 .problem-card:hover { transform: translateY(-10px); }
 
-/* Analyzer Section */
+/* Tabs styling */
+.tabs-container {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.tab-btn {
+    padding: 0.8rem 1.5rem;
+    border-radius: 50px;
+    border: 1px solid #e5e7eb;
+    background: var(--white);
+    color: var(--text-muted);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.tab-btn.active {
+    background: var(--primary);
+    color: var(--white);
+    border-color: var(--primary);
+    box-shadow: 0 4px 12px var(--primary-glow);
+}
+
+/* Revenue Section styling */
+.revenue-section {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: #f8fafc;
+    border-radius: var(--radius-md);
+    border: 1px solid #e2e8f0;
+}
+
+.revenue-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+.revenue-table th {
+    text-align: left;
+    padding: 0.8rem;
+    border-bottom: 2px solid #e2e8f0;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.revenue-table td {
+    padding: 0.8rem;
+    border-bottom: 1px solid #e2e8f0;
+    font-size: 0.95rem;
+}
+
+.revenue-amount {
+    font-weight: 700;
+    color: var(--primary);
+}
+
+/* Analyzer Section (Adjusted) */
 .analyzer-section { padding: 100px 0; }
 .analyzer-container {
     background: var(--white);
@@ -253,7 +313,7 @@ nav {
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow);
     max-width: 900px;
-    margin: 3rem auto 0;
+    margin: 0 auto;
 }
 
 .search-box {
