@@ -1,14 +1,143 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="ko">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hello World</title>
-  <link href='/style.css' rel='stylesheet'>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InsightFlow | 셀러를 위한 AI 리뷰 분석</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
-  <h1>Hello, world!</h1>
-  <button onclick="console.log('hello');">Press me</button>
-  <script defer type="text/javascript" src="/main.js"></script>
+    <header>
+        <nav class="container">
+            <div class="logo">Insight<span>Flow</span></div>
+            <ul class="nav-links">
+                <li><a href="#features">기능</a></li>
+                <li><a href="#demo">데모</a></li>
+                <li><a href="#pricing">가격</a></li>
+                <li><button class="btn btn-primary-small">시작하기</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero container">
+            <div class="hero-content">
+                <span class="badge">AI-Powered Insights for Sellers</span>
+                <h1>쏟아지는 리뷰 속에서<br><span class="text-gradient">진짜 문제</span>를 찾아내세요.</h1>
+                <p class="subtitle">InsightFlow는 1인 셀러의 CS 시간을 줄여주고,<br>매출을 높이는 구체적인 개선점(Action Item)을 제안합니다.</p>
+                <div class="hero-btns">
+                    <button class="btn btn-primary">지금 바로 시작하기</button>
+                    <button class="btn btn-secondary">서비스 소개 영상</button>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="dashboard-mockup">
+                    <div class="mockup-card glass-card">
+                        <div class="card-header">
+                            <span class="dot red"></span>
+                            <span class="dot yellow"></span>
+                            <span class="dot green"></span>
+                        </div>
+                        <div class="card-body">
+                            <div class="alert-item">
+                                <span class="icon">🚀</span>
+                                <div>
+                                    <strong>배송 지연 감지 (15% 증가)</strong>
+                                    <p>OO택배사 수도권 배송 지연 발생 중</p>
+                                </div>
+                            </div>
+                            <div class="insight-chart">
+                                <div class="bar" style="height: 60%"></div>
+                                <div class="bar highlight" style="height: 90%"></div>
+                                <div class="bar" style="height: 40%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Problem Section -->
+        <section class="problem-section bg-light">
+            <div class="container text-center">
+                <h2>사장님의 하루, 혹시 이렇지 않나요?</h2>
+                <div class="problem-grid">
+                    <div class="problem-card">
+                        <h3>리뷰는 쌓여가는데...</h3>
+                        <p>수천 개의 리뷰를 읽고 분석할 시간이 부족합니다.</p>
+                    </div>
+                    <div class="problem-card">
+                        <h3>문제의 원인을 모른다?</h3>
+                        <p>불만이 늘어나도 정확히 어디가 문제인지 알 수 없습니다.</p>
+                    </div>
+                    <div class="problem-card">
+                        <h3>데이터만 보기는 어렵다?</h3>
+                        <p>복잡한 수치 대신, 지금 당장 해야 할 행동이 필요합니다.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Demo Section -->
+        <section id="demo" class="demo-section container">
+            <div class="section-header text-center">
+                <h2>AI 분석 데모</h2>
+                <p>리뷰를 입력하면 InsightFlow가 액션 아이템을 뽑아드립니다.</p>
+            </div>
+            <div class="demo-container card">
+                <div class="input-area">
+                    <textarea id="reviewInput" placeholder="고객 리뷰를 여기에 입력해보세요. (예: 배송이 너무 느려요. 상품은 좋은데 택배사가 문제인 듯 합니다.)"></textarea>
+                    <button id="analyzeBtn" class="btn btn-primary full-width">AI 분석하기</button>
+                </div>
+                <div class="output-area glass-card" id="analysisResult">
+                    <div class="empty-state">
+                        <p>분석 버튼을 눌러보세요.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="features-section container">
+            <div class="feature-item">
+                <div class="feature-text">
+                    <span class="step">01</span>
+                    <h3>리뷰 자동 수집 및 분류</h3>
+                    <p>스마트스토어, 쿠팡 등 흩어진 모든 쇼핑몰의 리뷰를 한 번에 수집하고 긍정/부정으로 자동 분류합니다.</p>
+                </div>
+                <div class="feature-image">
+                    <div class="card-stack">
+                        <div class="card-flat">👍 배송이 빠르고 친절해요</div>
+                        <div class="card-flat">👎 포장이 다 터져서 왔어요</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="container text-center">
+                <h2>더 이상 리뷰에 휘둘리지 마세요.</h2>
+                <p>지금 InsightFlow를 도입하고 '진짜' 비즈니스에 집중하세요.</p>
+                <button class="btn btn-primary btn-large">무료로 시작하기</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="logo">Insight<span>Flow</span></div>
+                <p>&copy; 2026 InsightFlow Inc. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="main.js"></script>
 </body>
 </html>
