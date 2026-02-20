@@ -305,6 +305,73 @@ nav {
     color: var(--primary);
 }
 
+/* Insight Component Styles */
+.representative-reviews {
+    margin-top: 2rem;
+}
+
+.review-bubble {
+    background: white;
+    padding: 1rem;
+    border-radius: var(--radius-md);
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    border-left: 4px solid var(--primary);
+    font-size: 0.9rem;
+}
+
+.review-bubble .rating {
+    color: var(--accent);
+    font-weight: bold;
+    margin-right: 0.5rem;
+}
+
+.chart-container {
+    margin-top: 1rem;
+    display: flex;
+    align-items: flex-end;
+    gap: 1rem;
+    height: 150px;
+    padding: 1rem;
+    background: white;
+    border-radius: var(--radius-md);
+}
+
+.chart-bar-wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.chart-bar {
+    width: 100%;
+    background: #e5e7eb;
+    border-radius: 4px 4px 0 0;
+    transition: height 1s ease-out, background 0.3s;
+}
+
+.chart-bar.active {
+    background: var(--primary);
+}
+
+.chart-label {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+}
+
+.peak-hours-badge {
+    background: #fef3c7;
+    color: #92400e;
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
 /* Analyzer Section (Adjusted) */
 .analyzer-section { padding: 100px 0; }
 .analyzer-container {
